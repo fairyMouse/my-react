@@ -1,27 +1,35 @@
 {
-  "env": {
-    "browser": true,
-    "es2021": true
-  },
-  //  指定合集中的规则是打开还是关闭的类似于最佳实践的规则
-  "extends": [
-    "eslint:recommended",
-    "plugin:@typescript-eslint/recommended",
-    "prettier"
-  ],
-  // 用什么样的解析器去解析ts文件
-  "parser": "@typescript-eslint/parser",
-  "parserOptions": {
-    "ecmaVersion": "latest",
-    "sourceType": "module"
-  },
-  // 规则的合集
-  "plugins": ["@typescript-eslint", "prettier"],
-  // 个人指定的配置规则
-  "rules": {
-    "prettier/prettier": "error",
-    "no-case-declarations": "off",
-    "no-constant-condition": "off",
-    "@typescript-eslint/ban-ts-comment": "off"
-  }
+	"env": {
+		"browser": true,
+		"es2021": true,
+		"node": true
+	},
+	//  指定合集中的规则是打开还是关闭的类似于最佳实践的规则
+	"extends": [
+		"eslint:recommended",
+		"plugin:@typescript-eslint/recommended",
+		"prettier",
+		"plugin:@typescript-eslint/recommended-requiring-type-checking"
+	],
+	// 用什么样的解析器去解析ts文件
+	"parser": "@typescript-eslint/parser",
+	"parserOptions": {
+		"project": "./tsconfig.json", // 指向你的 tsconfig.json 文件
+		"ecmaVersion": "latest",
+		"sourceType": "module"
+	},
+	// 规则的合集
+	"plugins": ["@typescript-eslint", "prettier"],
+	// 个人指定的配置规则
+	"rules": {
+		"prettier/prettier": "error",
+		"no-case-declarations": "off",
+		"no-constant-condition": "off",
+		"@typescript-eslint/ban-ts-comment": "off",
+		"@typescript-eslint/no-unsafe-assignment": "off",
+		"@typescript-eslint/no-unsafe-argument": "off",
+		"@typescript-eslint/no-unsafe-member-access": "off",
+		"@typescript-eslint/no-unsafe-return": "off",
+		"@typescript-eslint/no-explicit-any": "off"
+	}
 }
