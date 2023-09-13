@@ -44,7 +44,7 @@ export function jsx(type: ElementType, config: any, ...maybeChildren: any) {
 				ref = val;
 			}
 		} else if ({}.hasOwnProperty.call(config, propName)) {
-			// 排除原型链上的属性
+			// 非原型链上的属性会被添加到 props 中
 			props[propName] = val;
 		}
 	}
